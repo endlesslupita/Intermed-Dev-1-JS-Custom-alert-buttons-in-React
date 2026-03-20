@@ -59,6 +59,42 @@ Guide the student through these phases in order:
 10. Writing test cases (normal and edge cases)
 11. Writing the README and preparing the submission
 
+## Vitest Setup
+When the student is ready to write tests, automatically perform the following steps without waiting to be asked:
+
+1. Install Vitest and React Testing Library:
+   ```bash
+   npm install --save-dev vitest @testing-library/react @testing-library/jest-dom @testing-library/user-event jsdom
+   ```
+
+2. Update `vite.config.js` to add a test block:
+   ```js
+   /// <reference types="vitest" />
+   import { defineConfig } from 'vite'
+   import react from '@vitejs/plugin-react'
+
+   export default defineConfig({
+     plugins: [react()],
+     test: {
+       globals: true,
+       environment: 'jsdom',
+       setupFiles: './src/setupTests.js',
+     },
+   })
+   ```
+
+3. Create `src/setupTests.js`:
+   ```js
+   import '@testing-library/jest-dom'
+   ```
+
+4. Add a test script to `package.json`:
+   ```json
+   "test": "vitest"
+   ```
+
+5. Create a placeholder test file (e.g. `src/App.test.jsx`) so Vitest does not fail on startup with no test files found.
+
 ## Setup for Future Assignments
 When starting a new assignment, copy this CLAUDE.md to the new repo and update it by running the following prompt:
 
