@@ -1,3 +1,5 @@
+import './AlertButton.css'
+
 function AlertButton(props) {
 
         const handleClick = () => {
@@ -5,7 +7,7 @@ function AlertButton(props) {
         }
 
 return (
-        <button onClick={ handleClick }>{props.children}</button>
+        <button className='button' style={{ backgroundColor: props.bgColor }} onClick={ handleClick }>{props.children}</button>
 )
 }
 
