@@ -1,5 +1,67 @@
 # Intermed-Dev-1-JS-Custom-alert-buttons-in-React
 
+## About This Project
+
+This React app demonstrates **props and event handling** using a Toolbar component with three reusable AlertButton components. Each button receives a unique label via the `children` prop and a unique alert message via the `message` prop. Clicking any button triggers a browser alert with that button's specific message.
+
+Built with React and Vite.
+
+## How to Run
+
+```bash
+cd alert-button-toolbar
+npm install
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## How to Run Tests
+
+```bash
+cd alert-button-toolbar
+npm test
+```
+
+8 tests total — 5 normal cases, 3 edge cases.
+
+## Video Demo Reference
+
+### What to Show
+- The running app with three styled buttons (Play, Record, Upload)
+- Clicking each button → the correct alert appears for that button
+- The test output showing all 8 passing
+
+### What to Say
+
+**Project overview**
+- Built a reusable `AlertButton` component that accepts `message` and `children` as props
+- Composed three instances of it inside a `Toolbar` component, each with unique content
+- Integrated `Toolbar` into `App.jsx`
+
+**Props concept**
+- Props are how React components receive data from their parent
+- `children` is a special prop — it's whatever you put between the opening and closing tags of a component
+- `message` is a custom prop passed as an attribute, used to control what the alert says
+- The same `AlertButton` component behaves differently depending on what props it receives
+
+**Component structure**
+- `AlertButton` defines the behavior — it reads `props.children` for the label and `props.message` for the alert
+- `Toolbar` is the parent — it decides what each button says and does by passing prop values
+- `App` renders `Toolbar`, keeping the top level clean
+
+**Normal test cases**
+- Play, Record, and Upload buttons each display the correct label text
+- Clicking each button triggers the correct alert message
+- Toolbar renders all three buttons together
+
+**Edge test cases**
+- Clicking Play does not trigger Record or Upload alert messages
+- Rapid clicks each fire an alert — no clicks are dropped
+- Buttons are keyboard accessible — pressing Enter also triggers the alert
+
+---
+
 ## 📝 Overview
 
 In this assignment, you will develop a React application featuring a **Toolbar** component that houses multiple **AlertButton** components. This project is designed to strengthen your understanding of how to pass data via props (including the special `children` prop) and how to execute specific logic using event handlers.
