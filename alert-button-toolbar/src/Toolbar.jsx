@@ -4,9 +4,9 @@ function Toolbar() {
 
 return (
 <div>
-<AlertButton />
-<AlertButton />
-<AlertButton />
+<AlertButton message='Playing movie' bgColor='green'>Play</AlertButton>
+<AlertButton message='Recording audio' bgColor='red'>Record</AlertButton>
+<AlertButton message='Uploading file' bgColor='blue'>Upload</AlertButton>
 
 </div>
 )
